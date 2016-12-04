@@ -28,6 +28,7 @@
             .content {
                 text-align: center;
                 display: inline-block;
+                
             }
 
             .title {
