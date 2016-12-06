@@ -51,3 +51,21 @@
 // 	return view('welcome');
 
 // });
+
+
+Route::get('successful', function(){
+	return view('welcome');
+	});
+ 
+Route::get('register',function(){
+	return view('layout/layout');
+
+});
+
+Route::post('welcome',function(){
+	$firstname = Input::get('firstname');
+	$lastname = Input::get('lastname');
+
+	return view('welcome',compact('firstname','lastname'));
+
+});
