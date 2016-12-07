@@ -53,12 +53,16 @@
 // });
 
 
+Route::get('/', function(){
+	return view('homepage');
+	});
+
 Route::get('successful', function(){
 	return view('welcome');
 	});
  
 Route::get('register',function(){
-	return view('layout/layout');
+	return view('registration');
 
 });
 
