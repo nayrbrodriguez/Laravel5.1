@@ -73,3 +73,4 @@ Route::post('welcome',function(){
 	return view('welcome',compact('firstname','lastname'));
 
 });
+

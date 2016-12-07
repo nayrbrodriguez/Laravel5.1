@@ -24,5 +24,18 @@ class Pagescontroller extends Controller
         return view('about');
     }
 
+    public function register(){
+
+        Schema::create('user', function($v){
+                $v ->increment('user_id');
+                $v ->string('lastname');
+                $v ->string('firstname');
+                $v -> timestamps();
+         });
+        return view('add');
+        
+    }
+
+
 }
  
