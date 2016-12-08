@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 
 class Pagescontroller extends Controller
 {
@@ -24,17 +26,47 @@ class Pagescontroller extends Controller
         return view('about');
     }
 
-    public function register(){
-
-        Schema::create('user', function($v){
-                $v ->increment('user_id');
+    // creating table to the database
+    public function addTable(){
+        
+        Schema::create('user', function($v){  
+                $v ->increments('user_id');
                 $v ->string('lastname');
                 $v ->string('firstname');
                 $v -> timestamps();
          });
-        return view('add');
+
+       
+       return view('added');
         
     }
+
+    //dropping table to the database
+    public function deleteTable(){
+         
+            Schema::dropIfExists('user');
+
+           
+             return view('deleteTable');
+         
+
+    }
+
+     // updating table to the database
+    public function updateTable(){
+        
+            Schema::table('user',function($v){
+                $v -> text('description');
+                   });
+            return view('updateTable',compact('description'));
+    }
+
+    // public function dropColumn(){
+    //     Schema::table ('user', function($u){
+    //         $u -> dropColumn('firstname');
+
+    //     });
+    // }
 
 
 }

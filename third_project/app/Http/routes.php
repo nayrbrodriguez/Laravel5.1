@@ -52,20 +52,19 @@
 
 // });
 
-
+// start getting data to the form
 Route::get('/', function(){
 	return view('homepage');
 	});
 
-Route::get('successful', function(){
-	return view('welcome');
-	});
- 
+
+// form
 Route::get('register',function(){
 	return view('registration');
 
 });
 
+// pass data from the form
 Route::post('welcome',function(){
 	$firstname = Input::get('firstname');
 	$lastname = Input::get('lastname');
@@ -73,4 +72,19 @@ Route::post('welcome',function(){
 	return view('welcome',compact('firstname','lastname'));
 
 });
+// succesfully getting data
+Route::get('successful', function(){
+	return view('welcome');
+	});
+// end getting data to the form
 
+
+// controller to add the table to the database
+Route::get('add', 'Pagescontroller@addTable');
+
+
+// controller to delete the table to the database
+Route::get('delete','Pagescontroller@deleteTable');
+
+// controller to update the table to the database
+Route::get('update', 'Pagescontroller@updateTable');
