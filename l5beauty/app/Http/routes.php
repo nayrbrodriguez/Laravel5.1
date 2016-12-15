@@ -18,7 +18,7 @@ get('admin', function () {
 
 $router->group([
     'namespace' => 'Admin',
-    
+    // 'middleware' => 'auth'
 ], function () {
     resource('admin/post', 'PostController', ['except' => 'show']);
     resource('admin/tag', 'TagController', ['except' => 'show']);

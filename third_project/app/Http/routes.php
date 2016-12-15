@@ -59,7 +59,8 @@ Route::get('/', function(){
 
 
 // form
-Route::get('register',function(){
+Route::get('register', array('middleware' => 'auth.basic'), function(){
+	
 	return view('registration');
 
 });
